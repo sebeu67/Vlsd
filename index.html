@@ -2,72 +2,28 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Достопримечательности города</title>
-    <link rel="stylesheet" href="styles-catalog.css">
+    <title>Онлайн-гид по городу - Достопримечательности</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Достопримечательности нашего города</h1>
-    <input type="text" id="search-input" placeholder="Поиск достопримечательности...">
-    
-    <div id="places-list">
-        <div class="place-card" data-name="Исторический музей" data-category="Культурные" data-rating="5">
-            <h3>Исторический музей</h3>
-            <p><strong>Категория:</strong> Культурные</p>
-            <p><strong>Рейтинг:</strong> ★★★★★</p>
-            <p>Время работы: 10:00-18:00</p>
+    <div class="container">
+        <h1>Онлайн-гид по Владимиру</h1>
+        <p>Исследуйте достопримечательности города</p>
+
+        <div class="controls">
+            <input type="text" id="search-input" placeholder="Поиск по названию или описанию..." onkeyup="filterPlaces()">
+            <select id="sort-select" onchange="sortPlaces()">
+                <option value="name-asc">По названию (А-Я)</option>
+                <option value="name-desc">По названию (Я-А)</option>
+                <option value="price-asc">По цене (возр.)</option>
+                <option value="price-desc">По цене (убыв.)</option>
+            </select>
         </div>
-        
-        <div class="place-card" data-name="Городской парк" data-category="Парки" data-rating="4.5">
-            <h3>Городской парк</h3>
-            <p><strong>Категория:</strong> Парки</p>
-            <p><strong>Рейтинг:</strong> ★★★★☆</p>
-            <p>Вход свободный</p>
-        </div>
-        
-        <div class="place-card" data-name="Соборная площадь" data-category="Религиозные" data-rating="5">
-            <h3>Соборная площадь</h3>
-            <p><strong>Категория:</strong> Религиозные</p>
-            <p><strong>Рейтинг:</strong> ★★★★★</p>
-            <p>Доступен для посещения круглосуточно</p>
-        </div>
-        
-        <div class="place-card" data-name="Парк аттракционов" data-category="Развлекательные" data-rating="4">
-            <h3>Парк аттракционов</h3>
-            <p><strong>Категория:</strong> Развлекательные</p>
-            <p><strong>Рейтинг:</strong> ★★★★☆</p>
-            <p>Стоимость билета: от 300 руб.</p>
-        </div>
-        
-        <div class="place-card" data-name="Арт-галерея" data-category="Культурные" data-rating="4.8">
-            <h3>Арт-галерея</h3>
-            <p><strong>Категория:</strong> Культурные</p>
-            <p><strong>Рейтинг:</strong> ★★★★☆</p>
-            <p>Входной билет: 200 руб.</p>
-        </div>
+
+        <div id="places-list" class="places-grid"></div>
+        <div id="pagination" class="pagination"></div>
     </div>
 
-    <script>
-        // Базовый скрипт для будущего функционала
-        document.addEventListener('DOMContentLoaded', () => {
-            const searchInput = document.getElementById('search-input');
-            const placesList = document.getElementById('places-list');
-            
-            searchInput.addEventListener('input', (e) => {
-                const query = e.target.value.toLowerCase();
-                const cards = placesList.getElementsByClassName('place-card');
-                
-                for(let i = 0; i < cards.length; i++) {
-                    const card = cards[i];
-                    const name = card.dataset.name.toLowerCase();
-                    
-                    if(name.includes(query)) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                }
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
