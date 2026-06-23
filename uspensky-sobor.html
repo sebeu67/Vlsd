@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Успенский собор - Онлайн гид</title>
+    <link rel="stylesheet" href="styles-detail.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Назад к каталогу</a>
+
+        <h1>Успенский собор</h1>
+
+        <!-- Галерея изображений -->
+        <section class="gallery-section">
+            <h2>Галерея</h2>
+            <div class="thumb-container">
+                <img src="успен 2.jpg" alt="Успенский собор снаружи" class="thumb" onclick="showImage(this.src)">
+                <img src="успен 1.jpg" alt="Интерьер собора" class="thumb" onclick="showImage(this.src)">
+                <img src="успен 4.jpg" alt="Золотые купола" class="thumb" onclick="showImage(this.src)">
+                <img src="успен 3.jpg" alt="Фрески внутри собора" class="thumb" onclick="showImage(this.src)">
+            </div>
+            <div class="large-image-container">
+                <img id="large-image" class="large-image" 
+                     src="успен 2.jpg" 
+                     alt="Успенский собор">
+            </div>
+        </section>
+
+        <!-- Основная информация -->
+        <section class="place-info">
+            <h2>Основная информация</h2>
+            <div class="info-block">
+                <p><strong>Категория:</strong> Храм, памятник ЮНЕСКО</p>
+                <p><strong>Время работы:</strong> 9:00 — 18:00</p>
+                <p><strong>Стоимость:</strong> 150 руб.</p>
+                <p><strong>Адрес:</strong> Соборная площадь, Владимир</p>
+            </div>
+        </section>
+
+        <!-- Описание -->
+        <section class="description">
+            <h2>Описание</h2>
+            <p>Успенский собор — выдающийся памятник древнерусской архитектуры XII века. Построен в 1158–1160 годах при князе Андрее Боголюбском. Здесь находятся уникальные фрески Андрея Рублёва и других мастеров.</p>
+            <p>Собор является частью Белокаменных памятников Владимира и Суздаля, внесённых в список Всемирного наследия ЮНЕСКО.</p>
+        </section>
+
+        <!-- Отзывы -->
+        <section class="reviews-section">
+            <h2>Отзывы посетителей</h2>
+            <div id="reviews-list">
+                <div class="review">
+                    <p><strong>Анна:</strong> Потрясающая архитектура и невероятные фрески внутри!</p>
+                </div>
+                <div class="review">
+                    <p><strong>Дмитрий:</strong> Обязательно посетите, особенно если интересуетесь историей и искусством.</p>
+                </div>
+            </div>
+
+            <div class="add-review-section">
+                <h3>Добавить свой отзыв</h3>
+                <textarea id="review-text" placeholder="Напишите здесь ваш отзыв..."></textarea>
+                <button id="add-review-btn" onclick="addReview()">Опубликовать отзыв</button>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function showImage(src) {
+            document.getElementById('large-image').src = src;
+        }
+
+        function addReview() {
+            const text = document.getElementById('review-text').value.trim();
+            if (!text) {
+                alert('Пожалуйста, напишите отзыв!');
+                return;
+            }
+            const reviewsList = document.getElementById('reviews-list');
+            const newReview = document.createElement('div');
+            newReview.className = 'review';
+            newReview.innerHTML = `
+                <p><strong>Вы:</strong> ${text}</p>
+            `;
+            reviewsList.appendChild(newReview);
+            document.getElementById('review-text').value = '';
+            alert('Спасибо за ваш отзыв!');
+        }
+    </script>
+</body>
+</html>

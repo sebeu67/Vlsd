@@ -2,21 +2,21 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Онлайн-гид по городу - Достопримечательности</title>
+    <title>Онлайн-гид по Владимиру - Достопримечательности</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <h1>Онлайн-гид по Владимиру</h1>
-        <p>Исследуйте достопримечательности города</p>
+        <p>Исследуйте лучшие достопримечательности города</p>
 
         <div class="controls">
             <input type="text" id="search-input" placeholder="Поиск по названию или описанию..." onkeyup="filterPlaces()">
             <select id="sort-select" onchange="sortPlaces()">
                 <option value="name-asc">По названию (А-Я)</option>
                 <option value="name-desc">По названию (Я-А)</option>
-                <option value="price-asc">По цене (возр.)</option>
-                <option value="price-desc">По цене (убыв.)</option>
+                <option value="price-asc">По цене (возрастание)</option>
+                <option value="price-desc">По цене (убывание)</option>
             </select>
         </div>
 
