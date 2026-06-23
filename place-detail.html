@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Исторический музей</title>
+    <link rel="stylesheet" href="styles-detail.css">
+</head>
+<body>
+    <div class="container">
+        
+        <a href="index.html" class="back-link">← Назад к каталогу</a>
+
+        <header>
+            <h1>Исторический музей</h1>
+        </header>
+
+        <section class="place-info">
+            <p><strong>Категория:</strong> Культурные</p>
+            <p><strong>Рейтинг:</strong> ★★★★★</p>
+            <p><strong>Адрес:</strong> ул. Большая Московская, 1, Владимир</p>
+            <p><strong>Время работы:</strong> 10:00 — 18:00 (вт—вс)</p>
+            <p><strong>Стоимость входа:</strong> 150 руб. (льготный — 80 руб.)</p>
+            <p><strong>Телефон:</strong> +7 (4922) 32-45-67</p>
+        </section>
+
+        <section class="description">
+            <h2>Описание</h2>
+            <p>Исторический музей — один из старейших музеев города, основанный в 1864 году. Здесь собрана богатая коллекция экспонатов, рассказывающих об истории Владимирской земли с древнейших времён до наших дней.</p>
+            <p>Более 50 тысяч предметов включают археологические находки, произведения искусства, документы и предметы быта.</p>
+        </section>
+
+        <section class="gallery-section">
+            <h2>Галерея</h2>
+            <div class="thumb-container">
+                <img src="Muzei01.jpg" alt="Здание Исторического музея" class="thumb" onclick="showImage(this.src)">
+                <img src="1.jpg" alt="Экспозиция музея" class="thumb" onclick="showImage(this.src)">
+                <img src="2.jpg" alt="Икона и экспонаты" class="thumb" onclick="showImage(this.src)">
+                <img src="3.jpg" alt="Царский шатёр" class="thumb" onclick="showImage(this.src)">
+            </div>
+            <div class="large-image-container">
+                <img id="large-image" class="large-image" 
+                     src="Muzei01.jpg" 
+                     alt="Исторический музей">
+            </div>
+        </section>
+
+        <section class="reviews-section">
+            <h2>Отзывы посетителей</h2>
+            <div id="reviews-list">
+                <div class="review">
+                    <p><strong>Елена С.:</strong> Очень интересный музей! Особенно понравилось детям.</p>
+                    <p class="review-rating">★★★★★</p>
+                </div>
+                <div class="review">
+                    <p><strong>Алексей П.:</strong> Рекомендую всем, кто любит историю.</p>
+                    <p class="review-rating">★★★★☆</p>
+                </div>
+            </div>
+
+            <div class="add-review-section">
+                <h3>Добавить свой отзыв</h3>
+                <textarea id="review-text" placeholder="Напишите здесь ваш отзыв..."></textarea>
+                <button id="add-review-btn" onclick="addReview()">Опубликовать отзыв</button>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        function showImage(src) {
+            document.getElementById('large-image').src = src;
+        }
+
+        function addReview() {
+            const text = document.getElementById('review-text').value.trim();
+            if (!text) {
+                alert('Пожалуйста, напишите отзыв!');
+                return;
+            }
+            const reviewsList = document.getElementById('reviews-list');
+            const newReview = document.createElement('div');
+            newReview.className = 'review';
+            newReview.innerHTML = `
+                <p><strong>Вы:</strong> ${text}</p>
+                <p class="review-rating">★★★★☆</p>
+            `;
+            reviewsList.appendChild(newReview);
+            document.getElementById('review-text').value = '';
+            alert('Спасибо за ваш отзыв!');
+        }
+    </script>
+</body>
+</html>

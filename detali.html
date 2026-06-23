@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Достопримечательность - Онлайн гид</title>
+    <link rel="stylesheet" href="styles-detail.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Соборная площадь</h1>
+
+        <!-- Галерея изображений -->
+        <section class="gallery">
+            <div class="thumbnails">
+                <img src="images/thumb1.jpg" alt="Фото 1" onclick="showImage(this.src)">
+                <img src="images/thumb2.jpg" alt="Фото 2" onclick="showImage(this.src)">
+                <img src="images/thumb3.jpg" alt="Фото 3" onclick="showImage(this.src)">
+            </div>
+            <div class="large-image-container">
+                <img id="large-image" src="images/main.jpg" alt="Основное фото">
+            </div>
+        </section>
+
+        <!-- Детальная информация -->
+        <section class="details">
+            <h2>Основная информация</h2>
+            <div class="info-block">
+                <p><strong>Категория:</strong> Архитектурный памятник</p>
+                <p><strong>Время работы:</strong> 9:00-18:00</p>
+                <p><strong>Стоимость:</strong> 300 руб.</p>
+                <p><strong>Адрес:</strong> ул. Соборная, 1</p>
+            </div>
+
+            <h2>Описание</h2>
+            <p>Соборная площадь — исторический центр города, где сосредоточены главные архитектурные памятники. Площадь была основана в 18 веке и является объектом культурного наследия.</p>
+        </section>
+
+        <!-- Отзывы -->
+        <section class="reviews">
+            <h2>Отзывы посетителей</h2>
+            <div class="review">
+                <p><strong>Анна:</strong> Великолепное место! Очень впечатлила архитектура и атмосфера.</p>
+            </div>
+            <div class="review">
+                <p><strong>Петр:</strong> Обязательно посетите это место. Особенно красиво вечером.</p>
+            </div>
+            <div class="review">
+                <p><strong>Мария:</strong> Рекомендую выделить минимум 2 часа на осмотр.</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function showImage(src) {
+            document.getElementById('large-image').src = src;
+        }
+    </script>
+</body>
+</html>
