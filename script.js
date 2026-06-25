@@ -7,7 +7,7 @@ let places = [
         price: 0,
         address: "ул. Соборная, Владимир",
         description: "Историческое сердце Владимира с белокаменными соборами — объект ЮНЕСКО.",
-        image: "5.jpg",           // ← Первая картинка (большая площадь)
+        image: "images/5.jpg",
         detailLink: "sobornaya-ploshad.html"
     },
     {
@@ -17,7 +17,7 @@ let places = [
         price: 150,
         address: "ул. Большая Московская, 1, Владимир",
         description: "Один из старейших музеев города с богатой коллекцией экспонатов.",
-        image: "Muzei01.jpg",
+        image: "images/Muzei01.jpg",
         detailLink: "place-detail.html"
     },
     {
@@ -27,8 +27,18 @@ let places = [
         price: 150,
         address: "Соборная площадь, Владимир",
         description: "Главный храм Владимиро-Суздальского княжества, шедевр древнерусской архитектуры.",
-        image: "успен 2.jpg",   
+        image: "images/успен 2.jpg",
         detailLink: "uspensky-sobor.html"
+    },
+    {
+        id: 4,
+        name: "Музей ложки",
+        category: "Культурные",
+        price: 200,
+        address: "ул. Октябрьская, 4, Владимир",
+        description: "Уникальный музей с коллекцией более 15 000 ложек из разных стран и эпох...",
+        image: "images/ложка 1.jpg",
+        detailLink: "muzei-lozhki.html"
     }
 ];
 
